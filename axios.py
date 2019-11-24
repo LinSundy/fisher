@@ -1,7 +1,7 @@
 import requests
 
 
-class HTTP:
+class Axios:
 
     @staticmethod
     def get(url, json=True):

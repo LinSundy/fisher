@@ -1,4 +1,4 @@
-from http import HTTP
+from axios import Axios
 
 
 class YuShuBook:
@@ -8,11 +8,11 @@ class YuShuBook:
     @classmethod
     def search_by_isbn(cls, q):
         url = cls.isbn_url.format(q)
-        r = HTTP.get(url)
+        r = Axios.get(url)
         return r
 
     @classmethod
     def search_by_keyword(cls, q, start=1, count=10):
         url = cls.keyword_url.format(q, start, count)
-        r = HTTP.get(url)
+        r = Axios.get(url)
         return r
