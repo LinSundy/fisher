@@ -2,8 +2,8 @@ from flask import Flask
 
 
 def register_blueprint(app):
-    from app.web.book import book
-    app.register_blueprint(book)
+    from app.web import web
+    app.register_blueprint(web)
 
 
 def create_app():

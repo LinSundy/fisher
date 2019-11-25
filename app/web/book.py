@@ -1,12 +1,11 @@
 from flask import jsonify, Blueprint
 
+from . import web
 from helper import is_isbn_or_key
 from yushu_book import YuShuBook
 
-book = Blueprint('book', __name__)
 
-
-@book.route('/book/search/<p>/<page>')
+@web.route('/book/search/<p>/<page>')
 def search_book(q, page):
     isbn_or_key = is_isbn_or_key(q)
     if isbn_or_key == 'isbn':
@@ -16,7 +15,6 @@ def search_book(q, page):
     return jsonify(result)
 
 
-@book.route('/')
+@web.route('/')
 def home():
-    print('a')
     return 'book home'
